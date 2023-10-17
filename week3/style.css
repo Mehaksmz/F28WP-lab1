@@ -1,50 +1,49 @@
-/* ================================
-   Global Styles
-================================ */
-
-body, html {
-    font-weight: 300;
+/* Reset Styles */
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Gabarito', cursive;
-    color: #23112e;
-    font-size: 1.09rem;
+    font-family: Arial, sans-serif;
+    color: #505050;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* ================================
-   Header Styles
-================================ */
-
+/* Header Styles */
 header {
-    display: flex;
-    align-items: center;
-    background: #ffffffd9;
+    background-color: rgb(2, 91, 91);
+    color: #fff;
+    text-align: center;
     padding: 20px;
-    transition: height 0.3s ease;
 }
 
-.logo-container {
-    flex: 1;
-    padding-right: 20px;
+.headeraH1 {
+    margin: 0;
 }
 
-.logo {
-    max-width: 100%;
-    height: 117px; 
-    padding-left: 4rem;
+.banner {
+    width: 100%;
+    overflow: hidden;
+
 }
 
-.nav-container {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
+.banner img {
+    width: 100%;
+
+    height: auto;
+    display: block;
 }
 
+.grid{
+    display:grid;
+    grid-template-rows: auto 1fr;
+    height:100vh;
+}
+.bottom{
+    overflow-y: auto;
+}
+
+/* Navigation Styles */
 nav ul {
+    background-color: #333;
+    color: #fff;
     text-align: center;
     list-style-type: none;
     margin: 0;
@@ -57,92 +56,86 @@ nav li {
 
 nav a {
     display: block;
-    font-weight: 700;
-    color: #23112e;
+    color: #fff;
     text-align: center;
-    padding: 14px 25px;
+    padding: 14px 16px;
     text-decoration: none;
-    transition: background 0.3s ease-in-out;
-}
-
-nav li a img {
-    height: 24px;
-    width: auto;
-    vertical-align: middle;
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
 }
 
 nav a:hover {
-    background: #4600462a;
-    color: #730577;
+    background-color: #505050;
+    /* Darker shade for hover */
 }
 
-nav a.active {
-    color: #9900a7;
-}
+/* Banner Styles */
 
-/* ================================
-   Banner Styles
-================================ */
+
+
 
 .banner-container {
-    display: flex; /* This will make its children use flexbox layout */
-    justify-content: center; /* This will center its children horizontally */
-    align-items: center; /* This will center its children vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
 }
 
-.banner img {
-    align-content: center;
-    width: 100%; /* Set the desired width in pixels */
-    height: 80%; /* Set the desired height in pixels */
-    display: block;
+.centered-banner {
+    padding: 30px;
+    max-width: 80%;
+    height: auto;
 }
 
-/* ================================
-   Main Content Styles
-================================ */
-
+/* Main Content Styles */
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .services {
     margin: 2rem auto;
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+main h3 {
+    margin-top: 20px;
+}
+
+/* Service Columns */
 .services-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
 
 .service-column {
-    flex-basis: calc(50% - 50px);
-    max-width: calc(50% - 50px);
+    flex-basis: calc(50% - 20px);
+    max-width: calc(50% - 20px);
     display: flex;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
 .service-column img {
-    width: 90%;
+    width: 250px;
     height: auto;
     margin-bottom: 10px;
-    transition: transform 0.3s ease-in-out;
 }
 
-.service-column:hover img {
-    transform: scale(1.09);
+.service-column h3 {
+    margin-bottom: 5px;
 }
 
-/* Mobile Responsiveness: Media Queries */
-
+/* Media Queries for Responsiveness */
 @media (max-width: 800px) {
     .service-column {
         flex-basis: calc(50% - 20px);
@@ -150,76 +143,56 @@ main {
     }
 }
 
-@media (max-width: 600px) {
-    header {
-        flex-direction: column; /* Make header content stack vertically */
-        height: auto; /* Adjust height based on content */
-        padding: 10px; /* Adjust padding if needed */
-    }
-
-    .logo-container, .nav-container {
-        width: 100%; /* Take full width of the header */
-        text-align: center; /* Center the logo and navigation links */
-    }
-        nav ul {
-            display: flex; /* Use flexbox to arrange list items in a row */
-            flex-wrap: wrap; /* Allow the items to wrap to the next line if necessary */
-            justify-content: space-around; /* Distribute space around items */
-            padding: 10px 0; /* Adjust padding if needed */
-    }
-
-    nav li {
-        margin: 0 3px; /* Adjust horizontal margins */
-        flex: 1; /* Allow each item to take up an equal amount of space */
-        text-align: center; /* Center the text within the item */
-    }
-
-    .logo {
-        height: 60px; /* Further reduction for smaller screens */
-    }
-
+@media (max-width: 700px) {
     .service-column {
         flex-basis: 100%;
         max-width: 100%;
     }
 }
 
-/* ================================
-   Call to Action Styles
-================================ */
 
+
+/* Call to Action Styles */
 .cta-container {
     text-align: center;
-    padding: 4rem;
-    background-color: #fdedfb;
+    font-size:large;
+    border-width:1px;
+    border-style: dotted;
+ border-color: #333;
+    padding: 20px;
+    margin:10px;
+    background-color: rgb(24, 194, 169) ;
     margin-top: 30px;
-    border: 1px dotted #ffcaf8;
 }
 
+.cta-container h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+
+.cta-container p{
+    font-size:medium;
+    font-weight: bold;
+}
 .cta-button {
     display: inline-block;
-    padding: 20px 40px;
-    background: linear-gradient(15deg, #350158, #af23ae);
+    padding: 10px 20px;
+    background-color: rgb(13, 118, 134);
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.5rem;
+    border-radius: 50%;
     font-weight: bold;
     margin-top: 15px;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #af23ae, #350158);
-    color: #ffcaf8;
+    background-color: #0056b3;
 }
 
-/* ================================
-   Footer Styles
-================================ */
-
+/* Footer Styles */
 footer {
-    background: linear-gradient(15deg, #350158, #af23ae);
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -238,106 +211,14 @@ footer a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
+    /* Smooth transition for hover effect */
 }
 
 footer a:hover {
     color: #b3b3b3;
+    /* Lighter color on hover */
 }
 
-
-/* ================================
-   Gallery Slide show Style
-================================ */
-
-
-* {
-    box-sizing: border-box;
-  }
-
-  /* Position the image container (needed to position the left and right arrows) */
-  .container {
-    position: relative;
-    align-content: center;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
-  .mySlides img{
-    width: 100%;
-  }
-  
-  /* Add a pointer when hovering over the thumbnail images */
-  .cursor {
-    cursor: pointer;
-  }
-  
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: rgb(184, 0, 166);
-    font-weight: bold;
-    font-size: 40px;
-    border-radius: 0 3px 3px 0;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: rgb(184, 0, 166);
-    font-size: 25px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* Container for image text */
-  .caption-container {
-    text-align: center;
-    background-color: #222;
-    padding: 2px 16px;
-    color: white;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
-    float: left;
-    width: 16.66%;
-  }
-  
-  /* Add a transparency effect for thumnbail images */
-  .demo {
-    opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-  
+footer p {
+    margin: 10px 0 0;
+}
